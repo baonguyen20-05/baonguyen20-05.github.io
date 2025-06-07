@@ -27,9 +27,11 @@ function firstQuestion(){
         imageHeight: 300,
         background: '#fff url("iput-bg.jpg")',
         imageAlt: 'Custom image',
-        confirmButtonText: CONFIG.btnIntro
+        confirmButtonText: CONFIG.btnIntro,
+        allowOutsideClick: false 
       }).then(function(){
         $('.content').show(200);
+        document.getElementById("bgMusic").play();
       })
 }
 
@@ -123,6 +125,8 @@ $('#yes').click(function() {
                 title: CONFIG.mess,
                 text: CONFIG.messDesc,
                 confirmButtonColor: '#83d0c9',
+                allowOutsideClick: false,
+                allowEscapeKey: false,
                 onClose: () => {
                     window.location = CONFIG.messLink;
                   }
